@@ -14,6 +14,15 @@ body{
   color: white;
 }
 
+body  h1,h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body p{
+  font-family:courier,arial,helvetica;
+
+}
+
 body a{
   text-decoration: none; 
 }
@@ -72,17 +81,18 @@ body a{
 
 .about-backgrond{
   width: 1200px;
-  height: 250px;
+  height: 200px;
   background-image: url("assets/Sem\ Título-2.png");
   margin-top: 20px;
   background-repeat: no-repeat;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .about-backgrond-intro{
   display: flex;
   flex-direction: column;
   align-items: start;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: lighter;
   padding: 40px;
   color: white;
@@ -97,6 +107,16 @@ body a{
 
 .about-content-header{
   margin: 10px;
+  text-align: justify;
+}
+
+
+
+.about-content-concepts-header2{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .about-content-concepts{
@@ -141,7 +161,16 @@ input{
 }
 
 .forms-header{
-  width: 50%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.forms-header a{
+  color: #507590;
+}
+
+.forms-header a:hover{
+  color: blue;
 }
 
 .forms-content{
@@ -149,19 +178,56 @@ input{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 20px;
+}
 
+.forms-content input{
+  background-color: #507590;
+  color: white;
+}
+.forms-content input::placeholder{
+  background-color: #507590;
+  color: #ffffff3b;
 }
 
 .forms-content-label{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
+  align-items:flex-end;
+  margin-top: 10px;
 
 }
 
 .forms-content-input{
   display: flex;
   flex-direction: column;
-  width: 50%
+  width: 25%;
+  margin-top: 10px;
+}
+.forms-content-input-buttons{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.forms-content-input-buttons-button{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.forms-content-input-buttons-button button{
+  width: 160px;
+  height: 40px;
+  background-color: #507590;
+  color: white;
+  border-radius: 5px;
+}
+
+.forms-content-input-buttons-button button:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 5px white;
 
 }

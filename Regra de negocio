@@ -1,0 +1,19 @@
+OBs: utilização de MAP, filter, reduce, find, some para manipular array json
+Obs. pesquisar por data mais recente  (te vira pra fazer isso)
+
+regra de negocios
+
+fatch da api para taxa cdi  https://api.hgbrasil.com/finance/taxes?key=c47b7f05
+
+DY:Deve ser analisado da seguinte forma
+
+1º verificar se ela paga no minimo mais que do o CDI
+	Caso Positivo: Se a ação render mais do que o CDI deve-se infromar que a ação é uma boa pagadora de dividendos, informar quanto a mais ela rende do que o CDI e indicar que se o investidro procura uma ação que pague dividiendos deve considerar a ação em questão. (ponto positivo +1)*
+  OBS se o pagamento de dividendos for muito alto deve-se ascender uma redflag e verificar a recorrencia dos dividendos da empresa.
+
+  Caso Negativo: Se a ação não pagar dividendos a cima do CDI deve-se informar que a ação não é uma boa pagadora de dividendos, ifnormar que deve-se realizar uma analise mais profunda a fim de saber se a ação em questão esta reinvestindo seu capital para crecimento ou está havendo uma mal gestão de capital. 
+
+
+2º Verificar LPA
+
+
