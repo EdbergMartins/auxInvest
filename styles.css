@@ -209,24 +209,27 @@ input{
   display: flex;
   width: 100%;
   height: 100%;
+  justify-content: center;
 }
-.forms-content-input-buttons-button{
+.forms-content-input-buttons-button input{
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
   align-items: center;
   margin-top: 20px;
-}
-
-.forms-content-input-buttons-button button{
   width: 160px;
   height: 40px;
   background-color: #507590;
   color: white;
   border-radius: 5px;
+  justify-content: center;
 }
 
-.forms-content-input-buttons-button button:hover{
+.forms-content-input-buttons-button input{
+
+}
+
+.forms-content-input-buttons-button input:hover{
   cursor: pointer;
   box-shadow: 1px 1px 5px white;
 

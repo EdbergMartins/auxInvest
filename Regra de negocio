@@ -7,6 +7,35 @@ fatch da api para taxa cdi  https://api.hgbrasil.com/finance/taxes?key=c47b7f05
 
 DY:Deve ser analisado da seguinte forma
 
+1º Calcular o valor intricico da ação.
+
+A fórmula de Graham (livro esta na pasta do tcc)
+
+valor intricico
+
+Vi=√(22,5xLPAxVPA)
+
+Para Benjamin Graham esse seria o valor justo sem margem de segurança para esta ação.
+
+Margem de segurança. 
+
+MS = VI - Preço da ação 
+
+quanto maior a margem de segurança mais estabel sera o investimento, pois mesno não tendo a certeza que o investimento irá crescer, estara comprando a ação descontada.
+
+
+Benjamin Graham, Jason Zweig, Warren E. Buffett. “The Intelligent Investor: The Definitive Book on Value Investing”, Harper Business, 1973.
+
+Benjamin Graham; David L. Dodd; Warren Buffett. “Security Analysis”. 6º Edicão. McGraw-Hill, 2008.
+
+“aquele valor que se justifica pelos fatos, por exemplo, os ativos, ganhos, dividendos, perspectivas definitivas, distinta, digamos, das cotações de mercado estabelecidas por manipulação ou distorcida por excessos psicológicos.” 
+
+
+
+
+
+
+
 1º verificar se ela paga no minimo mais que do o CDI
 	Caso Positivo: Se a ação render mais do que o CDI deve-se infromar que a ação é uma boa pagadora de dividendos, informar quanto a mais ela rende do que o CDI e indicar que se o investidro procura uma ação que pague dividiendos deve considerar a ação em questão. (ponto positivo +1)*
   OBS se o pagamento de dividendos for muito alto deve-se ascender uma redflag e verificar a recorrencia dos dividendos da empresa.
@@ -15,5 +44,34 @@ DY:Deve ser analisado da seguinte forma
 
 
 2º Verificar LPA
+  não é um atrtibuto muit obom
 
+
+ 3º P/L quanto maior, maior é expectativa de crescimento do resultado da empresa.
+  A taxa elevada desse indicador pode evidenciar que o mercado possui uma expectativa alta no crescimento da empresa e que a ação pode estar super valorizada.
+  Em contrapartida, valores menores de P/L próximos de 1 podem indicar problemas e riscos que estão afastando outros investidores e diminuindo seu preço.
+  P/L também pode ser negativo em caso de prejuízo na empresa. Nesse caso, é importante que você investidor se questione a respeito da origem desse prejuízo.
+  É importante considerar valores históricos do P/L, pois este indicador pode estar comprometido por eventos não recorrentes relacionados com o lucro que não serão mantidos no longo prazo.
+
+  4º P/VP  mostra o quanto o mercado está disposto a pagar de fato pelo patrimônio líquido da empresa.
+  De modo geral, isoladamente, se o P/VP é menor ou igual a 1temos um indicativo de que existem problemas precificados pelo mercado que podem prejudicar a continuidade do negócio.
+  Se maior do que 1 é um indicativo de que o mercado olha a empresa com menos pessimismo e enxerga um maior potencial de geração de valor por parte da empresa no longo prazo.
+  CASO POSITIVO: MERCADO PRECIFICA A AÇÃO COMO CRECIMENTO 
+  CASO NEGATIVO: MERCADO SUB PRECIFICA A AÇÃO POIS A EMPRESA PODE ESTA PASSANDO POR MALS BOCADOS.
+  QUANDO O MERCADO PRECIFICA A AÇÃO A MAIS O ágio expressivo pode expor os investidores a um possível maior risco num curto e médio prazo, na medida em que há maior expectativa do mercado em relação ao patrimônio. Quanto maior a expectativa, maior a cotação.
+
+  Dentre esses requisitos, ele defendia que não se deve investir em empresas com a relação P/L maior que 15 e com a relação P/VP maior que 1,5.
+
+
+
+
+
+
+
+
+
+
+  CHECKLIST DE BENJAMIN GRAHAM 
+
+  P/L máximo de 15, considerando o preço atual da ação dividido pelo lucro médio dos últimos 3 anos...
 
