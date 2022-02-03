@@ -55,13 +55,20 @@ btn.addEventListener("click", function (e) {
 
   const margem = vi - valuetagPrec;
 
+
   var div1 = document.getElementById("analise-valor-intricico")
   var div2 = document.getElementById("analise-valor-intricico2")
+  var div3 = document.getElementById("analise-valor-intricico3")
   parseFloat
   div1.innerHTML = "<h1>" + `O valor intricico da ação ${valuetagAcao} é de R$ ${vi.toFixed(2)}` + "<h1>"
   if (vi > valuetagPrec) {
-    div2.innerHTML = "<h1>" + `A margem de segurança entre o preço da ação e o valor intricico da mesma é de R$ ${margem.toFixed(2)} é de R$ ${vi.toFixed(2)}` + "<h1>"
+    div2.innerHTML = "<h1>" + `A margem de segurança entre o preço da ação e o valor intricico da mesma é de R$ ${margem.toFixed(2)}` + "<h1>"
+    div3.innerHTML = "<h1>" + `O ativo se encontra em uma região propicia para compra, sugerimos que se aprofunde nos estudos sobre a governança da empresa para confirmar se a mesma tem pespectiva de crecimento a longo prazo` + "<h1>";
+  } else if (vi < valuetagPrec) {
+    div2.innerHTML = "<h1>" + `A ação está super precificada em R$ ${Math.abs(margem.toFixed(2))}` + "<h1>";
+    div3.innerHTML = "<h1>" + `Como exite uma super precificação do ativo, seria mais logico analisar um outro ativo a fim de conseguir uma melhor oportunidade` + "<h1>";
   }
+
 
 
 });
