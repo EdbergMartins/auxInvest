@@ -92,7 +92,7 @@
           <h2>VPA</h2>
           <p>O VPA (Valor Patrimonial da Ação) é calculado a partida da divisão entre o Patrimônio Líquido da empresa
             pela quantidade de ações.
-<!-- 
+            <!-- 
             Caso não saiba, o patrimônio líquido corresponde ao que realmente pertence aos acionistas de uma empresa e,
             por isso, é um relevante modo de analisar a riqueza efetiva de uma companhia.
 
@@ -129,31 +129,35 @@
           <label for="tagPrec">Preço Atual:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" id="tagPrec" name="tagPrec" value="" placeholder="Ex: 28,5">
+          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagPrec" name="tagPrec" value=""
+            placeholder="Ex: 28,5">
         </div>
         <div class="forms-content-label">
           <label for="tagDy">DY:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" id="tagDy" name="tagDy" value="" placeholder="Ex: 1,5%">
+          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagDy" name="tagDy" value=""
+            placeholder="Ex: 1,5%">
         </div>
         <div class="forms-content-label">
           <label for="tagLpa">LPA:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" id="tagLpa" name="tagLpa" value="" placeholder="Ex: 0,80">
+          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagLpa" name="tagLpa" value=""
+            placeholder="Ex: 0,80">
         </div>
         <div class="forms-content-label">
           <label for="tagVpa">VPA:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" id="tagVpa" name="tagVpa" value="" placeholder="Ex: 3,04">
+          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagVpa" name="tagVpa" value=""
+            placeholder="Ex: 3,04">
         </div>
     </form>
     </div>
     <div class="forms-content-input-buttons">
       <div class="forms-content-input-buttons-button">
-        <input type="submit" id="send" value="Enviar">
+        <input disabled="disabled" type="submit" id="send" value="Enviar">
       </div>
     </div>
     </div>
