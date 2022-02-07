@@ -1,42 +1,55 @@
-const fetchCdi = async () => {
-  const url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos"
-  try {
-    const response = await fetch(url)
-    const json = await response.json()
-    json.map((item) =>
-      valor = item.valor)
-    return valor
-  } catch (error) {
-  }
-}
-(async () => { await fetchCdi() })()
+// const fetchCdi = async () => {
+//   const url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos"
+//   try {
+//     const response = await fetch(url)
+//     const json = await response.json()
+//     json.map((item) =>
+//       this.valor = item.valor)
+//     return valor
+//   } catch (error) {
+//   }
+// }
+// (async () => { await fetchCdi() })()
+
+// ---------------------------------------------------------------------
+
+// console.log({ data })
+
+selic = -100;
+var x = fetch("https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos", { method: "GET" })
+  .then((response) => response.json())
+  .then(data => {
+    // var objeto = JSON.parse(data)
+    selic = data[0].valor
+    return selic
+  })
 
 
-var x = fetchCdi();
 
 
 
+// selic = 0;
 // async function getData(url) {
-//   const response = await fetch(url);
-
-//   return response.json();
+//   const response = await fetch(url)
+//     response.then((response) => response.json())
+//     .then(data => {
+//       // var objeto = JSON.parse(data)
+//       selic = data[0].valor
+//       console.log(selic);
+//       return selic
+//     })
 // }
 
 // const data = getData("https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos");
 
-// console.log({ data })
 
-// var x = fetch("https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos", { method: "GET" })
-//   .then((response) => response.json())
-//   .then(data => {
-//     return data
-//   })
+
+
 
 
 const btn = document.querySelector("#send");
 
 btn.addEventListener("click", function (e) {
-
   e.preventDefault();
   var tagAcao = document.getElementById("tagAcao");
   var tagPrec = document.getElementById("tagPrec");
@@ -68,7 +81,9 @@ btn.addEventListener("click", function (e) {
     div2.innerHTML = "<h1>" + `A ação está super precificada em R$ ${Math.abs(margem.toFixed(2))}` + "<h1>";
     div3.innerHTML = "<h1>" + `Como exite uma super precificação do ativo, seria mais logico analisar um outro ativo a fim de conseguir uma melhor oportunidade` + "<h1>";
   }
-
+  console.log('====================================');
+  console.log(selic);
+  console.log('====================================');
 
 
 });
@@ -76,27 +91,29 @@ btn.addEventListener("click", function (e) {
 
 function checkInputs(inputs) {
   var filled = true;
-  
-  inputs.forEach(function(input) {
-      
-    if(input.value === "") {
-        filled = false;
+
+  inputs.forEach(function (input) {
+
+    if (input.value === "") {
+      filled = false;
     }
-  
+
   });
-  
+
   return filled;
-  
+
 }
 var inputs = document.querySelectorAll("input");
 var button = document.getElementById("send");
-inputs.forEach(function(input) {
-    
-  input.addEventListener("keyup", function() {
-    if(checkInputs(inputs)) {
+
+inputs.forEach(function (input) {
+
+  input.addEventListener("keyup", function () {
+    if (checkInputs(inputs)) {
       button.disabled = false;
     } else {
       button.disabled = true;
     }
   });
 });
+
