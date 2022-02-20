@@ -71,12 +71,12 @@
         <h1>O AuxInvest está aqui para agilizar sua analise empresarial nos seguintes paramentros</h1>
       </div>
       <div class="about-content-concepts">
-        <div class="about-content-concepts-each">
+        <!-- <div class="about-content-concepts-each">
           <h2>DY (Dividend Yield)</h2>
           <p>Dividend Yield (DY) é um indicador que mede a performance da empresa de acordo com os proventos pagos aos
             seus acionistas, normalmente nos últimos 12 meses. Pode ser traduzido para o português como “Rendimento de
             Dividendo”.</p>
-        </div>
+        </div> -->
         <div class="about-content-concepts-each">
           <h2>LPA (LUCRO POR AÇÃO)</h2>
           <p>Para calculá-lo basta dividir o lucro líquido de uma empresa em um determinado período pela sua quantidade
@@ -129,28 +129,28 @@
           <label for="tagPrec">Preço Atual:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagPrec" name="tagPrec" value=""
+          <input type="number" min="0" required name="numbers" pattern="[0-9]+$" id="tagPrec" name="tagPrec" value=""
             placeholder="Ex: 28,5">
         </div>
-        <div class="forms-content-label">
+        <!-- <div class="forms-content-label">
           <label for="tagDy">DY:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagDy" name="tagDy" value=""
+          <input type="number" required name="numbers" min="0" pattern="[0-9]+$" id="tagDy" name="tagDy" value=""
             placeholder="Ex: 1,5%">
-        </div>
+        </div> -->
         <div class="forms-content-label">
           <label for="tagLpa">LPA:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagLpa" name="tagLpa" value=""
+          <input type="number" required name="numbers" min="0" pattern="[0-9]+$" id="tagLpa" name="tagLpa" value=""
             placeholder="Ex: 0,80">
         </div>
         <div class="forms-content-label">
           <label for="tagVpa">VPA:</label>
         </div>
         <div class="forms-content-input">
-          <input type="number" required name="numbers" pattern="[0-9]+$" id="tagVpa" name="tagVpa" value=""
+          <input type="number" required name="numbers" min="0" pattern="^[1-9]\d*$" id="tagVpa" name="tagVpa" value=""
             placeholder="Ex: 3,04">
         </div>
     </form>

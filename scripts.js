@@ -1,20 +1,3 @@
-// const fetchCdi = async () => {
-//   const url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos"
-//   try {
-//     const response = await fetch(url)
-//     const json = await response.json()
-//     json.map((item) =>
-//       this.valor = item.valor)
-//     return valor
-//   } catch (error) {
-//   }
-// }
-// (async () => { await fetchCdi() })()
-
-// ---------------------------------------------------------------------
-
-// console.log({ data })
-
 selic = -100;
 var x = fetch("https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos", { method: "GET" })
   .then((response) => response.json())
@@ -23,29 +6,6 @@ var x = fetch("https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos"
     selic = data[0].valor
     return selic
   })
-
-
-
-
-
-// selic = 0;
-// async function getData(url) {
-//   const response = await fetch(url)
-//     response.then((response) => response.json())
-//     .then(data => {
-//       // var objeto = JSON.parse(data)
-//       selic = data[0].valor
-//       console.log(selic);
-//       return selic
-//     })
-// }
-
-// const data = getData("https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos");
-
-
-
-
-
 
 const btn = document.querySelector("#send");
 
@@ -61,7 +21,7 @@ btn.addEventListener("click", function (e) {
   var valuetagLpa = tagLpa.value;
   var valuetagVpa = tagVpa.value;
   var valuetagAcao = tagAcao.value;
-  var valuetagDy = tagDy.value;
+  // var valuetagDy = tagDy.value;
 
   console.log(valuetagLpa)
   console.log(valuetagVpa)
@@ -79,22 +39,22 @@ btn.addEventListener("click", function (e) {
   div1.innerHTML = "<h1>" + `O valor intricico da ação ${valuetagAcao} é de R$ ${vi.toFixed(2)}` + "<h1>";
   if (vi > valuetagPrec) {
     div2.innerHTML = "<h1>" + `A margem de segurança entre o preço da ação e o valor intricico da mesma é de R$ ${margem.toFixed(2)}` + "<h1>";
-    div4.innerHTML = "<h1>" + `O ativo se encontra em uma região propicia para compra, sugerimos que se aprofunde nos estudos sobre a governança da empresa para confirmar se a mesma tem pespectiva de crecimento a longo prazo` + "<h1>";
-    if (selic < valuetagDy) {
-      div3.innerHTML = "<h1>" + "Alem disso a ação esta pagando um Dividend Yeld maior do que a taxa selic. Este seria mais um ponto forte para a aquisição da mesma." + "</h1>";
-    } else {
-      div3.innerHTML = "<h1>" + "A ação esta pagando um Dividend Yeld menor que a taxa selic. Seria prudente estudar a estrategia da empresa para saber se a mesma está reinvestindo o capital que não esta sendo destribuido" + "</h1>"
-    }
+    div3.innerHTML = "<h1>" + `O ativo se encontra em uma região propicia para compra, sugerimos que se aprofunde nos estudos sobre a governança da empresa para confirmar se a mesma tem pespectiva de crecimento a longo prazo` + "<h1>";
+    // if (selic < valuetagDy) {
+    //   div3.innerHTML = "<h1>" + "Alem disso a ação esta pagando um Dividend Yeld maior do que a taxa selic. Este seria mais um ponto forte para a aquisição da mesma." + "</h1>";
+    // } else {
+    //   div3.innerHTML = "<h1>" + "A ação esta pagando um Dividend Yeld menor que a taxa selic. Seria prudente estudar a estrategia da empresa para saber se a mesma está reinvestindo o capital que não esta sendo destribuido" + "</h1>"
+    // }
 
   } else if (vi < valuetagPrec) {
     div2.innerHTML = "<h1>" + `A ação está super precificada em R$ ${Math.abs(margem.toFixed(2))}` + "<h1>";
-    div4.innerHTML = "<h1>" + `Como exite uma super precificação do ativo, seria mais logico analisar um outro ativo a fim de conseguir uma melhor oportunidade` + "<h1>";
-    if (selic < valuetagDy) {
-      div3.innerHTML = "<h1>" + "No ponto de vista dos dividendos a ação está pagando a cima da taxa selic. Seria prudente estudar a governança desta empresa pra saber o porque desta super precificação e a partir desta analise tomar uma posição em relação a mesma." + "</h1>";
-    } else {
-      div3.innerHTML = "<h1>" + "Além do mais a ação esta pagando um Dividend Yeld menor que a taxa selic, portanto um investimento mais sabio seria aportar no tesouro selic que é um investimento de renda fixa que rende mais que a ação em estudo." + "</h1>";
-      div4.innerHTML = ""
-    }
+    div3.innerHTML = "<h1>" + `Como exite uma super precificação do ativo, seria mais logico analisar um outro ativo a fim de conseguir uma melhor oportunidade` + "<h1>";
+    // if (selic < valuetagDy) {
+    //   div3.innerHTML = "<h1>" + "No ponto de vista dos dividendos a ação está pagando a cima da taxa selic. Seria prudente estudar a governança desta empresa pra saber o porque desta super precificação e a partir desta analise tomar uma posição em relação a mesma." + "</h1>";
+    // } else {
+    //   div3.innerHTML = "<h1>" + "Além do mais a ação esta pagando um Dividend Yeld menor que a taxa selic, portanto um investimento mais sabio seria aportar no tesouro selic que é um investimento de renda fixa que rende mais que a ação em estudo." + "</h1>";
+    //   div4.innerHTML = ""
+    // }
   }
 
   console.log('====================================');
@@ -110,8 +70,12 @@ function checkInputs(inputs) {
 
   inputs.forEach(function (input) {
 
-    if (input.value === "") {
+    if (input.value === "" || input.value < 0) {
       filled = false;
+    }
+    if (input.value < 0) {
+      filled = false;
+      alert("Não são permitidos numeros negativos");
     }
 
   });
